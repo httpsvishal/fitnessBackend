@@ -10,9 +10,10 @@ const authRouter = express.Router();
 // Register Route
 authRouter.post('/register', async (req, res) => {
     try {
-        const { email, password, age, height, weight, gender, fitnessGoal, targetWeight, timelineForGoals, activityLevel, dietaryPreferences, dietaryRestrictions, healthConditions } = req.body;
+        const {name, email, password, age, height, weight, gender, fitnessGoal, targetWeight, timelineForGoals, activityLevel, dietaryPreferences, dietaryRestrictions, healthConditions } = req.body;
 
         let userData = {
+            name,
             email,
             password,
             age,

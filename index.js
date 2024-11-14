@@ -4,12 +4,20 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes'); // Separate routes file for better organization
 const trackRoutes = require('./routes/trackRoutes')
 require('dotenv').config(); // For environment variables
+const cors = require('cors');
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
+
+// Use cors with options to allow only specific origins
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true 
+}));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
