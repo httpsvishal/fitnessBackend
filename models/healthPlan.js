@@ -24,7 +24,7 @@ const mealSchema = new Schema({
 
 // Define workout routine schema
 const strengthTrainingSchema = new Schema({
-  exercise: { type: String, required: true },
+  exercise: { type: Array, required: true },
   sets: { type: String, required: true },
   reps: { type: String, required: true },
 });
@@ -45,7 +45,7 @@ const healthPlanSchema = new Schema({
   morning_routine: {
     hydration: { type: String, required: true },
     optional: { type: String, required: true },
-    stretching_and_breathing: { type: String, required: true },
+    stretching_and_breathing: { type: Array, required: true },
   },
   meals: {
     breakfast: mealSchema,
