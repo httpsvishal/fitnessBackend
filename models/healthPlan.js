@@ -35,7 +35,7 @@ const cardioSchema = new Schema({
 });
 
 const workoutRoutineSchema = new Schema({
-  warm_up: { type: String, required: true },
+  warm_up: { type: Array, required: true },
   cardio: cardioSchema,
   strength_training: [strengthTrainingSchema],
 });
