@@ -7,10 +7,13 @@ console.log(process.env.GEMINI_APIKEY)
 //   apiKey: process.env.OPENAI_APIKEY,
 // });
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_APIKEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 async function generateHealthPlan(user) {
+  await delay(1000);
   console.log("hey");
   const prompt
     = `
